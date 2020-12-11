@@ -56,6 +56,22 @@
 	        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
 	      </div>
 	    </footer>
-	</div>
+    </div>
+    <script>
+        $("#submit-btn").on("click", function(event) {
+          event.preventDefault();
+          let newReservation = {
+            name: $("#name").val().trim(),
+            phone: $("#phone").val().trim(),
+            email: $("#email").val().trim(),
+            unique: $("#unique").val().trim()
+          };
+    
+          $.post("/api/tables", newReservation)
+            .then(function(data) {
+              alert("Adding Reservation...");
+            });
+        });
+    </script>
 </body>
 </html>
