@@ -7,4 +7,6 @@ const PORT = 3001;
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-app.listen(PORT, function {console.log("App running on Port " + PORT)});
+app.listen(PORT, function(){
+    console.log("App running on Port " + PORT);
+});
