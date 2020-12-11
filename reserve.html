@@ -1,0 +1,16 @@
+<script>
+    $("#submit-btn").on("click", function(event) {
+      event.preventDefault();
+      let newReservation = {
+        name: $("#name").val().trim(),
+        phone: $("#phone").val().trim(),
+        email: $("#email").val().trim(),
+        unique: $("#unique").val().trim()
+      };
+
+      $.post("/api/tables", newReservation)
+        .then(function(data) {
+          alert("Adding Reservation...");
+        });
+    });
+</script>
