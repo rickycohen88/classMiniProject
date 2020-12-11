@@ -58,6 +58,7 @@
 	    </footer>
     </div>
     <script>
+		let currentURL = window.location.origin;
         $("#submit-btn").on("click", function(event) {
           event.preventDefault();
           let newReservation = {
@@ -67,7 +68,7 @@
             unique: $("#unique").val().trim()
           };
     
-          $.post("/api/tables", newReservation)
+          $.post(currentURL+"/api/tables", newReservation)
             .then(function(data) {
               alert("Adding Reservation...");
               $("#name").val("");
