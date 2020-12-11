@@ -46,3 +46,9 @@ app.post("/api/tables", function (req, res) {
         // res.alert("You are on the waiting list");
     }
 });
+
+app.post("/api/clear", function(req,res){
+    tables = [];
+    waitlist = [];
+
+})
