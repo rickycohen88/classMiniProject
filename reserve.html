@@ -68,8 +68,8 @@
             unique: $("#unique").val().trim()
           };
     
-          $.post(currentURL+"/api/tables", newReservation)
-            .then(function(data) {
+          $.post(currentURL+"/api/tables", newReservation,
+            function(data) {
               alert("Adding Reservation...");
               $("#name").val("");
               $("#phone").val("");
